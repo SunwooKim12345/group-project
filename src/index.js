@@ -4,12 +4,14 @@ import reportWebVitals from './reportWebVitals';
 import './CSS/App.css';
 import Home from './components/Home';
 import Instruction from './components/Instruction';
+import PreviousCourses from './components/PreviousCourses';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     {/* <Home/> */}
-    <Instruction />
+    {/* <Instruction /> */}
+    <PreviousCourses />
   </>
 );
 
