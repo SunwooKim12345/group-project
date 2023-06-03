@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './CSS/App.css';
 import Home from './components/Home';
-import Nav from './components/Nav';
-
+import Instruction from './components/Instruction';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Home/>
+    {/* <Home/> */}
+    <Instruction />
   </>
 );
 
