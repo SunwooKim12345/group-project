@@ -5,13 +5,15 @@ import './CSS/App.css';
 import Home from './components/Home';
 import Instruction from './components/Instruction';
 import PreviousCourses from './components/PreviousCourses';
+import Login from './components/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     {/* <Home/> */}
     {/* <Instruction /> */}
-    <PreviousCourses />
+    {/* <PreviousCourses /> */}
+    <Login />
   </>
 );
 
