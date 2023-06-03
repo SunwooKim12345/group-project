@@ -1,0 +1,42 @@
+/* Global CSS*/
+:root {
+  background-image: url(../image/SUNYKorea_AcBldg.jpg);
+}
+
+body {
+  background-color: transparent !important;
+}
+
+/* Main css */
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+.course-man {
+  height: 40px;
+}
+
+/* Nav css */
+.nav-item {
+  background-color: hsl(0 0% 100% / 0.3);
+}
+
+.nav-item .nav-link {
+  color: gray;
+}
+
+.nav-item .nav-link.active {
+  color: black;
+}
+
+.nav-item .nav-link:hover {
+  color: black;
+}
+
+.nav-item .nav-link:active {
+  color: black;
+}
+
