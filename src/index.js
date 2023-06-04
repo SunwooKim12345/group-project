@@ -6,14 +6,16 @@ import Home from './components/Home';
 import Instruction from './components/Instruction';
 import PreviousCourses from './components/PreviousCourses';
 import Login from './components/Login';
+import SelectCourses from './components/SelectCourses';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     {/* <Home/> */}
     {/* <Instruction /> */}
-    {/* <PreviousCourses /> */}
-    <Login />
+    {/* <Login /> */}
+    <PreviousCourses />
+    {/* <SelectCourses/> */}
   </>
 );
 

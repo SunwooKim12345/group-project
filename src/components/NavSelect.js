@@ -15,29 +15,29 @@ const add_active = ( event ) => {
     event.target.classList.add('active');
 }
 
-const Nav = () => {
+const NavSelect = () => {
 
     return (
-        <div className='lg-screen'>
-            <ul className="nav justify-content-end">
+        <div className='lg-screen container-fluid'>
+            <ul className="nav justify-content-center">
                 <li className="nav-item">
-                    <a className="nav-link active" href="#" onClick={add_active}>Home</a>
+                    <a className="nav-select nav-link active" href="#" onClick={add_active}>Home</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={add_active}>Instruction</a>
+                    <a className="nav-select nav-link" href="#" onClick={add_active}>Instruction</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={add_active}>Login</a>
+                    <a className="nav-select nav-link" href="#" onClick={add_active}>Login</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={add_active}>PreviousCourses</a>
+                    <a className="nav-select nav-link" href="#" onClick={add_active}>PreviousCourses</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={add_active}>SelectCourses</a>
+                    <a className="nav-select nav-link" href="#" onClick={add_active}>SelectCourses</a>
                 </li>
             </ul>
         </div>
     );
 }
 
-export default Nav;
+export default NavSelect;

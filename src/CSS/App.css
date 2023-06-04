@@ -19,6 +19,15 @@ body {
 .blur {
   background-color: hsl(0 0% 100% / 0.2);
 }
+
+input[type=button]:hover {
+  transform: scale(1.1);
+}
+
+.sm-screen {
+  display: none;
+}
+
 /* Home css */
 .overlay-bg {
   position: absolute;
@@ -52,16 +61,61 @@ body {
   color: black;
 }
 
+.nav-item.nav-blur  {
+    background-color: hsl(0 0% 100% / 0.3);
+}
+
+.nav-sm .nav-item {
+  background-color: hsl(0 0% 100% / 0.0);
+}
+.nav.nav-sm {
+  backdrop-filter:blur(5px);
+  height: 100vw;
+  width: 80vw;
+}
+
+.menu-button {
+  position: fixed;
+  top:10%;
+  right:0%;
+  transform: translate(-50%, -50%) scale(1);
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: lightblue;
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  z-index: 10;
+}
+
+.menu-button::before {
+  position: fixed;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 2px solid blue;
+  z-index: 10;
+
+}
+
 /* Instructions css */
 .pre {
   margin-top : 10px;
   padding: 10px;
 }
 
+.bg-skyblue-instruction {
+  background-color: lightblue;
+  border: 2px solid grey;
+  font-size: 24px;
+  font-family: 'Times New Roman';
+}
+
 /* Previous courses css */
 .course-list {
-  padding-left : 150px;
-  padding-right: 150px;
+  padding-left : 10vw;
+  padding-right: 10vw;
   padding-bottom: 15px;
 }
 
@@ -69,28 +123,151 @@ body {
   padding-bottom : 30px;
 }
 
+.row .col-form-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.form-check-label {
+  font-size: 11px;
+}
+
+.form-check-input {
+  margin: 0px;
+}
+
 /* Login css */
 #id {
   padding-left: 20px;
   padding-right: 20px;
-  margin-left: 30vw;
-  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
 
+}
+
+.id-label {
+  margin-left: 27.24px;
+  margin-right: 27.24px;
 }
 
 #password {
   padding-left: 20px;
   padding-right: 20px;
-  margin-left: 25vw;
-  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
 
 }
 
 .login {
   padding-left: 30px;
   padding-right: 30px;
+  margin-top: 20px;
 }
 
 .login-button {
   margin-bottom: 10px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.form-control {
+  width: 10px;
+}
+
+/* Select courses css */
+.nav-select.nav-link {
+  font-size: 15px;
+}
+
+.search-form.bg-blue {
+  margin-left: 20px;
+  height: 300px;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+.border-search {
+  border: 2px solid gray;
+  height: 85%;
+}
+
+.border-courses {
+  border: 2px solid gray;
+  height: 100%;
+}
+
+.blue-border {
+  border: 2px solid blue;
+  height: 85%;
+  width: 96%;
+  margin: 20px;
+}
+
+.course-form .id-label {
+  margin-left: 47.24px;
+  margin-right: 27.24px;
+}
+
+.course-form .password-label {
+  margin-left: 20px;
+
+}
+
+.course-form {
+  margin-top: 30px
+}
+
+.course-form .courses {
+  margin-left: 20px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.courses {
+  margin-top: 70px;
+}
+
+.name-label {
+  margin-left: 36.12px;
+  margin-right: 16.12px;
+}
+
+.search-label {
+  margin-left: 20px;
+}
+
+.course-form .form-check-label {
+  font-size: 16px;
+  margin-left: 3px;
+}
+
+.course-form .form-check-input {
+  margin-left: 3px;
+}
+
+.register {
+  margin-top: 13%;
+  margin-left: 20px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+/* CSS for small screen */
+@media all and (max-width: 40em) {
+  .sm-screen {
+    display: block;
+  }
+
+  .lg-screen {
+    display: none;
+  }
+
+  .row .col-form-3 {
+    width: 100%;
+  }
 }
