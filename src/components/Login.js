@@ -37,7 +37,7 @@ const Login = () => {
 
                 console.log( "fName: " + fName );
                 console.log( "lName: " + lName );
-                console.log( students[idx].password );
+                console.log( "password: " + students[idx].password );
 
                 console.log(hashutil( fName, lName, password ));
 
