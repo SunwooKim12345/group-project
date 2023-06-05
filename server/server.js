@@ -31,6 +31,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get( "/students", Comp.getStudentinfoTable );
 console.log( "Ddbug: router: getStudentinfoTable" );
 
+app.get( "/courses", Comp.getCourseNames );
+console.log( "Ddbug: router: getCourseNames" );
+
+app.get( "/coursePre", Comp.getCoursePrereq );
+console.log( "Ddbug: router: getCoursePre" );
 
 
 // simple route

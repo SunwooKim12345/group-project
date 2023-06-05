@@ -177,6 +177,12 @@ input[type=button]:hover {
 }
 
 /* Select courses css */
+.description {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 23px;
+}
+
 .nav-select.nav-link {
   font-size: 15px;
 }
@@ -197,14 +203,16 @@ input[type=button]:hover {
 
 .border-courses {
   border: 2px solid gray;
-  height: 100%;
+  background-color: rgb(70, 143, 238);
+  margin-left: 20px;
 }
 
 .blue-border {
   border: 2px solid blue;
-  height: 85%;
   width: 96%;
   margin: 20px;
+  background-color: rgb(70, 143, 238);
+
 }
 
 .course-form .id-label {
@@ -251,7 +259,7 @@ input[type=button]:hover {
 }
 
 .register {
-  margin-top: 13%;
+  margin-top: 20px;
   margin-left: 20px;
   background-color: skyblue;
   border-radius: 5px;
