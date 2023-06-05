@@ -5,6 +5,7 @@ const Students = function( student ) {
     this.password = student.password;
     this.fName = student.fName;
     this.lName = student.lName;
+    this.course = student.course;
 }
 
 const Courses = function( course ) {
@@ -29,6 +30,25 @@ Students.getAll = ( result ) => {
 
         return result( null, res );
       });
+}
+
+Students.insert = ( student, result ) => {
+    console.log( "Course Registered!" );
+    let query = "INSERT INTO studentRegistered (studentId, course) VALUES (? , ?)";
+    let values = [ student.studentId, student.course ];
+
+    sql.query( query, values, ( err, res ) => {
+        if ( err ) {
+            console.log( "error: ", err );
+            result( null, err );
+
+            return;
+        }
+
+        console.log( "Inserted course ", res );
+
+        return result( null, res );
+    });
 }
 
 Courses.getAll = ( result ) => {

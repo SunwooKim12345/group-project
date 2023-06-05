@@ -59,8 +59,24 @@ const getCoursePrereq = ( req, res ) => {
     })
 }
 
+const insertCourse = ( req, res ) => {
+    const student = req.body;
+
+    Students.insert( student, ( err, data ) => {
+        if ( err ) {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred."
+            });
+        } else {
+            res.json( data );
+        }
+    });
+};
+
 module.exports = {
     getStudentinfoTable,
     getCourseNames,
-    getCoursePrereq
+    getCoursePrereq,
+    insertCourse
 };

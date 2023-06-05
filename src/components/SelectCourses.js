@@ -4,6 +4,8 @@ import NavSelect from './NavSelect';
 import NavSmSelect from './NavSmSelect'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
 
 const SelectCourses = () => {
@@ -34,9 +36,50 @@ const SelectCourses = () => {
             let courses = Array.from(Object.values(data.courses));
             courses = courses.filter( (course) => selectedCourses.includes(course.course));
 
+            const prevCourses = JSON.parse(Cookies.get('prevCourses'));
 
+            console.log( prevCourses );
             console.log("hello");
             console.log( courses );
+            
+            let count = 0;
+            for( let idx = 0; idx < courses.length; idx++ ) {
+                if( !prevCourses.includes(courses[idx].coursePrereq) ) {
+                    alert( courses[idx].course + " requires " + courses[idx].coursePrereq );
+
+                    return;
+                }
+
+                // if( prevCourses.includes(courses[idx].course) ) {
+                //     alert(courses[idx].course + " already completed! " );
+
+                //     return;
+                // }
+            }
+
+            for( let idx = 0; idx < selectedCourses.length; idx++ )  {
+                if( prevCourses.includes(selectedCourses[idx]) ) {
+                    alert(selectedCourses[idx] + " already completed! " );
+
+                    return;
+                }
+            }
+            let registered = '';
+
+            for( let idx = 0; idx < selectedCourses.length; idx++ ) {
+                registered += selectedCourses[idx] + " ";
+
+                axios.post("http://localhost:8080/courseReg", {"studentId": Cookies.get("studentId"), "course": selectedCourses[idx]})
+                .then( response => console.log( response.data ))
+                .catch( error => console.error( error ) );
+            }
+
+            alert( "Courses Selected:\n" + registered );
+            
+
+
+
+
         })
     }
 
