@@ -51,6 +51,24 @@ Students.insert = ( student, result ) => {
     });
 }
 
+Students.getCourse = ( result ) => {
+    console.log( "get All registered courses!" );
+    let query = "SELECT * FROM studentRegistered";
+    
+    sql.query( query, ( err, res ) => {
+        if ( err ) {
+          console.log( "error: ", err );
+          result( null, err );
+
+          return;
+        }
+    
+        console.log( "students: ", res );
+
+        return result( null, res );
+    });
+}
+
 Courses.getAll = ( result ) => {
     console.log( "get All courses!" );
     let query = "SELECT * FROM courseName";

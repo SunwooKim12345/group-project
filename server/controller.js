@@ -74,9 +74,31 @@ const insertCourse = ( req, res ) => {
     });
 };
 
+const getCourseReg = ( req, res ) => {
+    
+    Students.getCourse( ( err, data ) => {
+
+        if ( err ) {
+            res.status(500).send({
+              message: err.message || "Some error occurred."
+            });
+          } else {
+            const student = data.map(item => {
+              return {
+                studentId: item.studentId,
+                course: item.course
+              };
+            });
+      
+            res.send({ student });
+          }
+    })
+}
+
 module.exports = {
     getStudentinfoTable,
     getCourseNames,
     getCoursePrereq,
+    getCourseReg,
     insertCourse
 };

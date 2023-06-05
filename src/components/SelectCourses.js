@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
+import Course from './Course';
 
 
 const SelectCourses = () => {
@@ -15,7 +16,9 @@ const SelectCourses = () => {
     const [ search, setSearch ] = useState('');
     const [ searchedResult, setSearchedResult ] = useState([]);
     const [ selectedCourses, setSelectedCourses ] = useState([]);
+    const [ registeredCourse, setRegisteredCourse ] = useState([]);
 
+    let courseCap = [];
     const handleCheckboxChange = ( event ) =>  {
         const { value, checked } = event.target;
         if ( checked ) {
@@ -90,37 +93,73 @@ const SelectCourses = () => {
             
             let courses = Array.from(Object.values(data.courses));
     
+            for( let idx = 0; idx <courses.length; idx++ ) {
+                courseCap.push(new Course(courses[idx].course, 40 ));
+            }
+
             setSearchedResult( courses );
+
+
             
         })
     }
 
     useEffect(() => {
         result();
+
+        fetch("http://localhost:8080/courseReg")
+        .then((response) => response.json())
+        .then((data) => {
+
+            
+            setRegisteredCourse( Array.from(Object.values(data.student)) );
+            
+        })
     }, []);
 
     const formbox = () => {
+
+        let maxCap = 40;
+
+
+        
         let coursesToRender = searchedResult;
 
         if (search !== '') {
             coursesToRender = searchedResult.filter(course => course.courseName.includes(search));
         }
 
-        return coursesToRender.map((course) => (
-            <div key={course.course} className="form-check">
-                <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id={course.course}
-                    value={course.course}
-                    onChange={handleCheckboxChange}
-                />
-                <label className="form-check-label" htmlFor={course.course}>
-                    {course.course} : {course.courseName}
-                </label>
-                <br />
-            </div>
-        ));
+
+
+        return coursesToRender.map((course) => 
+
+               <div key={course.course} className="form-check">
+                   <input
+                       className="form-check-input"
+                       type="checkbox"
+                       id={course.course}
+                       value={course.course}
+                       onChange={handleCheckboxChange}
+                   />
+                   <label className="form-check-label" htmlFor={course.course}>
+                       {course.course} : {course.courseName} - {cap(course.course)} of 40
+                   </label>
+                   <br />
+               </div>         
+               
+        );
+    }
+
+    const cap = ( course ) => {
+        let count = 0;
+
+        for( let idx =0; idx < registeredCourse.length; idx++ ) {
+            if( registeredCourse[idx].course == course) {
+                count++;
+            }
+        }
+
+        return 40 - count;
     }
 
 

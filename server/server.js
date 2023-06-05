@@ -37,9 +37,11 @@ console.log( "Ddbug: router: getCourseNames" );
 app.get( "/coursePre", Comp.getCoursePrereq );
 console.log( "Ddbug: router: getCoursePre" );
 
-app.get( "/courseReg", Comp.insertCourse );
+app.post( "/courseReg", Comp.insertCourse );
 console.log( "Ddbug: router: insertCourse" );
 
+app.get( "/courseReg", Comp.getCourseReg );
+console.log( "Ddbug: router: getCourseReg" );
 
 // simple route
 app.get("/", (req, res) => {
