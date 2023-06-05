@@ -1,8 +1,8 @@
 import '../CSS/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Import bootstrap
-import Nav from './Nav';
+import NavPrevCourses from './NavPrevCourses';
 import { useState } from 'react';
-import NavSm from './NavSm'
+import NavSmPrev from './NavSmPrev'
 
 
 const PreviousCourses = () => {
@@ -12,8 +12,8 @@ const PreviousCourses = () => {
     return (
         <>
             <div className='bg-transparent d-flex container text-white h2 align-items-center justify-content-center'>CourseMan!</div>
-            <Nav className="lg-screen"/>
-            <NavSm classNAme='sm-screen' />
+            <NavPrevCourses className="lg-screen"/>
+            <NavSmPrev classNAme='sm-screen' />
             <div className='d-flex container text-black h2 align-items-center justify-content-center'>
                 <div className='blur'>
                     Previous Courses

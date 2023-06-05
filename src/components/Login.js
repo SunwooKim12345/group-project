@@ -1,7 +1,7 @@
 import '../CSS/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Import bootstrap
-import Nav from './Nav';
-import NavSm from './NavSm'
+import NavLogin from './NavLogin';
+import NavSmLogin from './NavSmLogin'
 
 
 const Login = () => {
@@ -9,8 +9,8 @@ const Login = () => {
     return (
         <>
             <div className='bg-transparent d-flex container text-white h2 align-items-center justify-content-center'>CourseMan!</div>
-            <Nav className="lg-screen"/>
-            <NavSm classNAme='sm-screen' />
+            <NavLogin className="lg-screen"/>
+            <NavSmLogin classNAme='sm-screen' />
 
             <div className='container d-flex justify-content-center align-items-center'>
                 <div className="content-box text-center">

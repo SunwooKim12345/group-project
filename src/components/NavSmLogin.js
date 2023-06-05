@@ -17,7 +17,7 @@ const add_active = ( event ) => {
     event.target.classList.add('active');
 }
 
-const NavSm = () => {
+const NavSmLogin = () => {
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -32,13 +32,13 @@ const NavSm = () => {
         {isClicked && <div className='d-flex container-fluid justify-content-end'>
             <ul className="nav nav-sm flex-column">
                 <li className="nav-item">
-                    <Link className="nav-select nav-link active d-flex justify-content-center" to="/" onClick={add_active}>Home</Link>
+                    <Link className="nav-select nav-link d-flex justify-content-center" to="/" onClick={add_active}>Home</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-select nav-link d-flex justify-content-center" to="/instruction" onClick={add_active}>Instruction</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-select nav-link d-flex justify-content-center" to="/login" onClick={add_active}>Login</Link>
+                    <Link className="nav-select nav-link active d-flex justify-content-center" to="/login" onClick={add_active}>Login</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-select nav-link d-flex justify-content-center" to="/previous-courses" onClick={add_active}>PreviousCourses</Link>
@@ -52,4 +52,4 @@ const NavSm = () => {
     );
 }
 
-export default NavSm;
+export default NavSmLogin;

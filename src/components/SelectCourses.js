@@ -1,7 +1,7 @@
 import '../CSS/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Import bootstrap
 import NavSelect from './NavSelect';
-import NavSm from './NavSm'
+import NavSmSelect from './NavSmSelect'
 
 
 const SelectCourses = () => {
@@ -10,7 +10,7 @@ const SelectCourses = () => {
         <>
             <div className='bg-transparent d-flex container h2 align-items-center justify-content-center'>CourseMan =&gt; Search/Register</div>
             <NavSelect className="lg-screen"/>
-            <NavSm classNAme='sm-screen' />
+            <NavSmSelect classNAme='sm-screen' />
             <div className='bg-blue search-form'>
                 <div className='h2 title'> Search Form</div>
                 <div className='border-search'>

@@ -7,16 +7,20 @@ import Instruction from './components/Instruction';
 import PreviousCourses from './components/PreviousCourses';
 import Login from './components/Login';
 import SelectCourses from './components/SelectCourses';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <>
-    {/* <Home/> */}
-    {/* <Instruction /> */}
-    {/* <Login /> */}
-    <PreviousCourses />
-    {/* <SelectCourses/> */}
-  </>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="instruction" element={<Instruction />} />
+      <Route path="/login" element={<Login />}/>
+      <Route path="/previous-courses" element={<PreviousCourses />}/>
+      <Route path="/select-courses" element={<SelectCourses />}/>
+    </Routes>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
