@@ -1,10 +1,28 @@
 import '../CSS/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Import bootstrap
 import NavLogin from './NavLogin';
-import NavSmLogin from './NavSmLogin'
-
+import NavSmLogin from './NavSmLogin';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+import hashutil from "../javascript/hashutil.mjs"
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const [ studentId, setStudentId ] = useState( '' );
+    const [ password, setPassword ] = useState( '' );
+
+
+
+    const handleLogin = ( event ) => {
+        event.preventDefault();
+        
+        // fetch("http://localhost:8080/students")
+        // .then
+
+        navigate('/home');
+    }
 
     return (
         <>
@@ -16,12 +34,12 @@ const Login = () => {
                 <div className="content-box text-center">
                     <div className='bg-blue login'>
                         <div className='bg-transparent d-flex container h2 align-items-center justify-content-center'>Login Form</div>
-                        <form>
+                        <form onSubmit={handleLogin}>
                             <label for="id" className='id-label'>ID:</label>
-                            <input type="text" id="id" name="id" className='justify-content-end float-right'></input><br/><br/>
+                            <input type="text" id="id" name="id" className='justify-content-end float-right' onChange={(event) => setStudentId(event.target.value)}></input><br/><br/>
 
                             <label for="password">Password:</label>
-                            <input type="text" id="password" name="password" className='justify-content-end'></input><br/><br/>
+                            <input type="text" id="password" name="password" className='justify-content-end' onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
 
                             <input type="submit" value="Login" className='login-button'></input>
                         </form>                        
