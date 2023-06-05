@@ -126,7 +126,7 @@ const SelectCourses = () => {
         let coursesToRender = searchedResult;
 
         if (search !== '') {
-            coursesToRender = searchedResult.filter(course => course.courseName.includes(search));
+            coursesToRender = searchedResult.filter(course => course.courseName.toLowerCase().includes(search.toLowerCase()));
         }
 
 
