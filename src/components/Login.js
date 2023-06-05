@@ -14,6 +14,9 @@ const Login = () => {
     const [ studentId, setStudentId ] = useState( '' );
     const [ password, setPassword ] = useState( '' );
 
+    const handleUserCookie = ( user ) => {
+        Cookies.set( 'studentId', studentId );
+    }
 
 
     const handleLogin = ( event ) => {
@@ -50,6 +53,8 @@ const Login = () => {
                 alert( "Invalid ID or Password. Try again." )
             }
             else {
+
+                handleUserCookie( student );
                 navigate('/home');
             }
         })
