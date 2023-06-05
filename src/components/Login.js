@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'; //Import bootstrap
 import NavLogin from './NavLogin';
 import NavSmLogin from './NavSmLogin';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react'
-import hashutil from "../javascript/hashutil.mjs"
+import { useState } from 'react';
+import hashutil from "../javascript/hashutil.mjs";
 
 const Login = () => {
 
@@ -18,10 +18,41 @@ const Login = () => {
     const handleLogin = ( event ) => {
         event.preventDefault();
         
-        // fetch("http://localhost:8080/students")
-        // .then
+        fetch("http://localhost:8080/students")
+        .then((response) => response.json())
+        .then( (data) => {
+            const students = Array.from(Object.values(data.students));
 
-        navigate('/home');
+            let count = 0;
+            let student = '';
+            
+            for( let idx = 0; idx < students.length; idx++ ) {
+
+                let fName = students[idx].fName;
+                let lName = students[idx].lName;
+
+                console.log( "fName: " + fName );
+                console.log( "lName: " + lName );
+                console.log( students[idx].password );
+
+                console.log(hashutil( fName, lName, password ));
+
+                if( students[idx].studentId == studentId
+                    && students[idx].password === hashutil( fName, lName, password )) {
+                        count++;
+                        student = students[idx].studentId;
+                        console.log( count );
+                }
+            }
+
+            if( count === 0 ) {
+                alert( "Invalid ID or Password. Try again." )
+            }
+            else {
+                navigate('/home');
+            }
+        })
+
     }
 
     return (

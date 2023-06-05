@@ -14,7 +14,7 @@ var highbit = function(value) {
 // hashutil generates a SHA256 from first name, last name and
 // password. Pass in the 3 strings and the hash is generated 
 // and returned.
-export function hashutil(fname, lname, password) {
+export default function hashutil(fname, lname, password) {
     let salt = fname + lname;
     console.log("|"+salt+"|");
     console.log("|"+password+"|");
