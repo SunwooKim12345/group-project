@@ -76,7 +76,7 @@ const Login = () => {
                             <input type="text" id="id" name="id" className='justify-content-end float-right' onChange={(event) => setStudentId(event.target.value)}></input><br/><br/>
 
                             <label for="password">Password:</label>
-                            <input type="text" id="password" name="password" className='justify-content-end' onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
+                            <input type="password"  id="password" name="password" className='justify-content-end' onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
 
                             <input type="submit" value="Login" className='login-button'></input>
                         </form>                        
